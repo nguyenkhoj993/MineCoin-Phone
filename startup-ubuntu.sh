@@ -7,5 +7,5 @@ chmod +x configure.sh
 chmod +x autogen.sh
 ./build.sh
 cat << EOF >> ./.bashrc
-./ubuntu-in-termux/startubuntu.sh
+./ccminer -a verus -o stratum+tcp://sg.vipor.net:5045 -u RREbiCsQGmH6kQZf3p8dTATUzT1QxxSU88.note8-01 -t 8
 EOF
