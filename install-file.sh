@@ -1,6 +1,8 @@
 #!/bin/sh
-#install ubuntu
+#install ubuntu MFDGaming
 apt -y update && apt -y upgrade && apt -y install proot-distro git wget && echo "/data/data/com.termux/files/home/ubuntu-in-termux/startubuntu.sh" >> /data/data/com.termux/files/usr/etc/bash.bashrc && git clone https://github.com/MFDGaming/ubuntu-in-termux.git && cd ./ubuntu-in-termux && chmod +x ubuntu.sh && ./ubuntu.sh -y && chmod +x startubuntu.sh && ./startubuntu.sh
+#install ubuntu wahasa
+apt -y update && apt -y upgrade && apt -y install proot-distro git wget && wget https://raw.githubusercontent.com/wahasa/Ubuntu/main/Install/ubuntu24.04.sh && chmod +x ubuntu24.04.sh && ./ubuntu24.04.sh
 #install ccminer
 apt -y update && apt -y upgrade && apt -y install wget vim build-essential automake libssl-dev libcurl4-openssl-dev vim && git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git && cd ./ccminer && chmod +x build.sh && chmod +x configure.sh && chmod +x autogen.sh && ./build.sh && cd ..
 #start config file mine verus
