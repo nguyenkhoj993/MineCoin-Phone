@@ -7,9 +7,12 @@ apt -y update && apt -y upgrade && apt -y install wget vim build-essential autom
 rm -rf /root/MineCoin-Phone && git clone https://github.com/nguyenkhoj993/MineCoin-Phone.git && chmod +x /root/MineCoin-Phone/config.sh && echo "/root/MineCoin-Phone/config.sh" >> /root/.bashrc
 #&& vim /root/.bashrc
 #install docker
-apt -y update && apt -y upgrade && apt -y install qemu-utils qemu-common qemu-system-x86_64-headless && mkdir alpine && cd alpine && wget wget http://dl-cdn.alpinelinux.org/alpine/v3.19/releases/x86_64/alpine-virt-3.19.1-x86_64.iso && sh /data/data/com.termux/files/home/MineCoin-Phone/docker.sh
+apt -y update && apt -y upgrade && apt -y install qemu-utils qemu-common qemu-system-x86_64-headless && mkdir alpine && cd alpine && wget http://dl-cdn.alpinelinux.org/alpine/v3.19/releases/x86_64/alpine-virt-3.19.1-x86_64.iso && sh /data/data/com.termux/files/home/MineCoin-Phone/docker.sh
 #switch command config.sh
 cd /root/MineCoin-Phone/ && git stash && git pull https://github.com/nguyenkhoj993/MineCoin-Phone.git && chmod +x /root/MineCoin-Phone/config.sh && cd ..
 
-ifup eth0 && wget wget https://raw.githubusercontent.com/cyberkernelofficial/docker-in-termux/main/answerfile && sed -i -E 's/(local kernel_opts)=.*/\1="console=ttyS0"/' /sbin/setup-disk && setup-alpine -f answerfile
+ifup eth0 && wget https://raw.githubusercontent.com/cyberkernelofficial/docker-in-termux/main/answerfile && sed -i -E 's/(local kernel_opts)=.*/\1="console=ttyS0"/' /sbin/setup-disk && setup-alpine -f answerfile
 qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 -drive if=pflash,format=raw,read-only=on,file=$PREFIX/share/qemu/edk2-x86_64-code.fd -netdev user,id=n1,dns=8.8.8.8,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 -nographic /data/data/com.termux/files/home/alpine/alpine.img
+git clone https://github.com/brokeDude2901/android_kernel_samsung_universal8895_docker.git && chmod +x /data/data/com.termux/files/home/android_kernel_samsung_universal8895_docker/build_kernel.sh
+
+apt -y install wget && wget https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh && chmod +x /data/data/com.termux/files/home/check-config.sh && sed -i '1s_.*_#!/data/data/com.termux/files/usr/bin/bash_' check-config.sh && sudo /data/data/com.termux/files/home/check-config.sh
