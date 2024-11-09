@@ -1,7 +1,7 @@
 #!/bin/sh
 #install ubuntu wahasa
 apt -y update && apt -y upgrade && apt -y install proot-distro git wget && wget https://raw.githubusercontent.com/wahasa/Ubuntu/main/Install/ubuntu24.04.sh && chmod +x ubuntu24.04.sh && ./ubuntu24.04.sh
-git pull https://github.com/nguyenkhoj993/MineCoin-Phone.git && echo "sh /data/data/com.termux/files/MineCoin-Phone/os.sh" >> /data/data/com.termux/files/usr/etc/bash.bashrc && chmod +x /data/data/com.termux/files/MineCoin-Phone/os.sh
+git pull https://github.com/nguyenkhoj993/MineCoin-Phone.git && echo "sh /data/data/com.termux/files/home/MineCoin-Phone/os.sh" >> /data/data/com.termux/files/usr/etc/bash.bashrc && chmod +x /data/data/com.termux/files/home/MineCoin-Phone/os.sh
 #install ccminer
 apt -y update && apt -y upgrade && apt -y install wget vim build-essential automake libssl-dev libcurl4-openssl-dev vim git && git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git && cd ./ccminer && chmod +x build.sh && chmod +x configure.sh && chmod +x autogen.sh && ./build.sh && cd ..
 #start config file mine verus
